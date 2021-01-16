@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <%- include('../partials/skull') -%>
+    <div class="container">
+      <h1 style="text-align: center; margin-top: 30px">
+       Edit comment
+      </h1>
+      <div class="row">
+        <div style="width: 50%; margin: 25px auto">
+          <form action="/campgrounds/<%= campground_id %>/comments/<%= comment._id  %>?_method=PUT" method="POST">
+            <div class="form-group">
+              <input
+                class="form-control"
+                type="text"
+                value="<%= comment.text  %>"
+                name="comment[text]"
+              />
+            <div class="form-group">
+              <input class="btn btn-lg btn-secondary btn-block" type="submit" />
+            </div>
+          </form>
+          <a href="/campgrounds">GO back</a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
